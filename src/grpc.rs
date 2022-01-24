@@ -1,10 +1,6 @@
-use echo::echo_server::{Echo, EchoServer};
+use echo::echo_server::Echo;
 use echo::{EchoRequest, EchoResponse};
-use tonic::{transport::Server,Status, Request, Response};
-use tonic::transport::server::{Router, RouterService};
-use tonic::transport;
-use tower::util::BoxCloneService;
-use tower::BoxError;
+use tonic::{Request, Response, Status};
 
 pub mod echo {
     tonic::include_proto!("echo");
@@ -25,7 +21,6 @@ impl Echo for EchoService {
         }))
     }
 }
-
 
 // pub fn grpc_service() -> BoxCloneService<Request,Response, BoxError> {
 //     let service = EchoService::default();

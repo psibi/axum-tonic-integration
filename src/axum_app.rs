@@ -7,7 +7,5 @@ async fn home() -> Html<&'static str> {
 }
 
 pub fn http_app() -> IntoMakeService<Router> {
-    Router::new()
-        .route("/", get(home))
-        .into_make_service()
+    Router::new().route("/", get(home)).into_make_service()
 }
