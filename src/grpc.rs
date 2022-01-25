@@ -21,9 +21,3 @@ impl Echo for EchoService {
         }))
     }
 }
-
-// pub fn grpc_service() -> BoxCloneService<Request,Response, BoxError> {
-//     let service = EchoService::default();
-//     let server = Server::builder().add_service(EchoServer::new(service)).into_service();
-//     BoxCloneService::new(server)
-// }
